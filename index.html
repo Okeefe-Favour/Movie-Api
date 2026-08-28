@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOVIE API</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="app">
+      <h1><marquee>WELCOME</marquee></h1>
+      <section class="search-container">
+        <form action="" id="form">
+          <input
+            type="text"
+            name=""
+            class="search-input"
+            id="searchInput"
+            placeholder="search"
+            onkeyup="searchFunction()"
+            autocomplete="on"
+          />
+          <button type="submit" id="searchBtn" class="search-btn">
+            SEARCH
+          </button>
+        </form>
+      </section>
+
+      <section class="video-hero-container">
+        <div class="video-responsive-wrap">
+          <iframe
+            src="https://youtube.com/embed/3zOLzsbOleM"
+            title="Michael | Official Trailer"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+      </section>
+
+      <section class="movie-card">
+        <p class="movie-type">Movies</p>
+        <section class="movie-card-1"></section>
+      </section>
+
+      <section class="Series-card">
+        <p class="movie-type">Series</p>
+        <section class="series-card-1" id="series-container"></section>
+        <button class="more">More</button>
+      </section>
+      <!-- Movie Modal -->
+      <div class="detail-modal" id="movieModal" aria-hidden="true">
+        <div
+          class="movie-panel movie-theme"
+          role="dialog"
+          aria-labelledby="movieModalTitle"
+          aria-modal="true"
+        >
+          <button
+            class="modal-close"
+            type="button"
+            data-close-modal="movieModal"
+            aria-label="Close movie details"
+          >
+            &times;
+          </button>
+
+          <div class="movie-content-grid">
+            <img src="" alt="" class="movie-poster" id="movieModalPoster" />
+
+            <div class="movie-copy">
+              <p class="movie-kicker">Movie Details</p>
+              <!-- FIX: Added id="movieModalTitle" to match aria-labelledby -->
+              <h3 id="movieModalTitle" class="movieModalTitle">Title</h3>
+              <p class="movie-meta" id="movieModalMeta"></p>
+              <p class="movie-overview" id="movieModalOverview"></p>
+
+              <div class="modal-stat-wrap">
+                <span class="modal-chip" id="movieModalRuntime"></span>
+                <span class="modal-chip" id="movieModalLanguage"></span>
+                <span class="modal-chip" id="movieModalTagline"></span>
+                <span class="modal-chip" id="movieModalReleaseDate"></span>
+                <span class="modal-chip" id="movieModalRating"></span>
+                <span class="modal-chip" id="movieModalGenre"></span>
+                <span class="modal-chip" id="movieModalVoteCount"></span>
+                <span class="modal-chip" id="movieModalVoteAverage"></span>
+                <span class="modal-chip" id="movieModalCompany"></span>
+                <span class="modal-chip" id="movieModalCountry"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Series Modal -->
+      <div class="detail-modal" id="seriesModal" aria-hidden="true">
+        <div
+          class="movie-panel movie-theme"
+          role="dialog"
+          aria-labelledby="seriesModalTitle"
+          aria-modal="true"
+        >
+          <button
+            class="modal-close"
+            type="button"
+            data-close-modal="seriesModal"
+            aria-label="Close series details"
+          >
+            &times;
+          </button>
+
+          <div class="movie-content-grid">
+            <img src="" alt="" class="movie-poster" id="seriesModalPoster" />
+
+            <div class="movie-copy">
+              <p class="movie-kicker">Series Details</p>
+              <!-- FIX: Added id="seriesModalTitle" to match aria-labelledby -->
+              <h3 id="seriesModalTitle" class="seriesModalTitle">Title</h3>
+              <p class="movie-meta" id="seriesModalMeta"></p>
+              <p class="movie-overview" id="seriesModalOverview"></p>
+
+              <div class="modal-stat-wrap">
+                <span class="modal-chip" id="seriesModalSeasons"></span>
+                <span class="modal-chip" id="seriesModalEpisodes"></span>
+                <span class="modal-chip" id="seriesModalReleaseDate"></span>
+                <span class="modal-chip" id="seriesModalRating"></span>
+                <span class="modal-chip" id="seriesModalGenre"></span>
+                <span class="modal-chip" id="seriesModalStatus"></span>
+                <span class="modal-chip" id="seriesModalVoteCount"></span>
+                <span class="modal-chip" id="seriesModalVoteAverage"></span>
+                <span class="modal-chip" id="seriesModalCompany"></span>
+                <span class="modal-chip" id="seriesModalCountry"></span>
+                <span class="modal-chip" id="seriesModalLanguage"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Search Results Modal -->
+             <!-- Search Results Modal -->
+      <div class="detail-modal" id="searchModal" aria-hidden="true">
+        <div
+          class="movie-panel movie-theme"
+          role="dialog"
+          aria-labelledby="searchModalTitle"
+          aria-modal="true"
+        >
+          <button
+            class="modal-close"
+            type="button"
+            data-close-modal="searchModal"
+            aria-label="Close search results"
+          >
+            &times;
+          </button>
+
+          <div class="movie-content-grid">
+            <div class="movie-copy search-modal-full-width">
+              <p class="movie-kicker">Search Results</p>
+              <h3 id="searchModalTitle" class="movieModalTitle">Results</h3>
+              
+              <!-- Clean grid wrapper container -->
+              <section class="movie-card-1 search-results-scroll-grid" id="searchResultsContainer">
+                <!-- Dynamic search cards are injected here via your JavaScript -->
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </body>
+</html>
